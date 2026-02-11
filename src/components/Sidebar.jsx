@@ -8,12 +8,12 @@ import { useState, useCallback } from "react"
 export default function Sidebar({ initialMenuItems = [] }) {
   let [newMenuItem, setNewMenuItem] = useState("")
 
-  // ✅ TODO 2: Maintain current menu items in state
+  // TODO 2: Maintain current menu items in state
   let [menuItems, setMenuItems] = useState(initialMenuItems)
 
   let [filter, setFilter] = useState("")
 
-  // ✅ TODO 3: Add new item to menuItems state
+  // TODO 3: Add new item to menuItems state
   let addMenuItem = useCallback(() => {
     if (!newMenuItem.trim()) return
 
@@ -21,7 +21,7 @@ export default function Sidebar({ initialMenuItems = [] }) {
     setNewMenuItem("")
   }, [newMenuItem])
 
-  // ✅ TODO 4: Filter menu items using case-insensitive regex
+  // TODO 4: Filter menu items using case-insensitive regex
   let filteredMenuItems = menuItems.filter((item) => {
     if (!filter.trim()) return true
 
@@ -54,7 +54,7 @@ export default function Sidebar({ initialMenuItems = [] }) {
         placeholder="Filter by..."
       />
 
-      {/* ✅ TODO 1: Render unordered list */}
+      {/* TODO 1: Render unordered list */}
       <ul>
         {filteredMenuItems.map((item, index) => (
           <li key={index}>{item}</li>
